@@ -1,10 +1,27 @@
-{% extends 'layout.html' %}
-
-{% block body %}
-  <h1>AVAILABLE JOBS</h1>
-  <ul class="list-group">
-    {% for job in jobs %}
-      <li class="list-group-item"><a href="/job/{{job[0]}}">{{job[1]}}</a></li>
-    {% endfor %}
-  </ul>
-{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Listings</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Job Listings</h1>
+    <div class="row">
+      {% for job in jobs %}
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ job.title }}</h5>
+            <p class="card-text">Location: {{ job.location }}</p>
+            <p class="card-text">Salary: {{ job.salary }}</p>
+            <a href="{{ url_for('apply', job_id=job.id) }}" class="btn btn-primary">Apply</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>
