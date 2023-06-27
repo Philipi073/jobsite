@@ -34,14 +34,20 @@ def jobs():
     jobs = cur.fetchall()
     return render_template("jobs.html", jobs=jobs)
 
-@app.route("/job/<int:id>/")
-def article(id):
+@app.route("/apply/<int:job-id>/")
+def apply(job_id):
     #create connection
     cur = connection.cursor()
     #execute
-    cur.execute("SELECT * FROM jobs WHERE id=%s",(id,))
+    cur.execute("SELECT * FROM jobs WHERE id=%s",(job_id,))
     job = cur.fetchone()
-    return render_template("job.html", job=job)
+    if job:
+        return render_template("apply.html", job=job)
+    else:
+        return "Job notfound"
+    if request.method == "POST":
+        #handle application submission here
+        return "Application is successful"
 
 class RegisterForm(Form):
     name = StringField("Name",[validators.Length(min=4, max=50)])
