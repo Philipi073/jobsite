@@ -5,13 +5,13 @@
     <h1>Job Listings</h1>
     <div class="row">
       {% for job in jobs %}
-      <div class="col-md-4 mb-4">
+      <div class="col-md-3 mb-4">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">{{ job[1] }}</h5>
             <p class="card-text">Location: {{ job[3] }}</p>
             <p class="card-text">Salary: {{ job[4] }}</p>
-            <a href="{{ url_for('dashboard') }}" class="btn btn-primary">Apply</a>
+            <a href="{{ url_for('apply', job_id=job[0]) }}" class="btn btn-primary">Apply</a>
           </div>
         </div>
       </div>
