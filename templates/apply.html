@@ -1,20 +1,24 @@
 {% extends 'layout.html' %}
 
-{% block title %}Apply for Job{% endblock %}
 
-{% block content %}
+{% block body %}
+
+
   <h1>Apply for Job</h1>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">{{ job.title }}</h5>
-      <p class="card-text">Location: {{ job.location }}</p>
-      <p class="card-text">Salary: {{ job.salary }}</p>
+      <h5 class="card-title">{{ job[1] }}</h5>
+      <p class="card-text"><b>Requirement:</b> {{ job[2] | safe }}</p>
+      <p class="card-text"><b>Location:</b> {{ job[3] }}</p>
+      <p class="card-text"><b>Salary:</b>{{ job[4] }}</p>
     </div>
   </div>
+ 
+
 
   <div class="mt-4">
-    <h4>Application Form</h4>
-    <form method="post" action="{{ url_for('submit_application', job_id=job.id) }}">
+	  <h4>Application Form for {{job[1]}}</h4>
+	  <form method="post" action="{{ url_for('applicant',job_id=job.id) }}">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name" name="name" required>
