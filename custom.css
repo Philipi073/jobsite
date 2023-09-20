@@ -1,0 +1,61 @@
+/* Custom CSS for Your Project */
+
+/* Navigation Bar */
+.navbar {
+    background-color: #007BFF; /* Primary color */
+}
+
+.navbar-dark .navbar-toggler-icon {
+    color: #fff; /* White color for the navbar toggler icon */
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #fff !important; /* White color for navigation links */
+}
+
+/* Sidebar */
+#sidebar {
+    background-color: #343A40; /* Dark background color */
+    color: #fff; /* White text color */
+}
+
+#sidebar .nav-item .nav-link {
+    padding: 10px; /* Add padding to sidebar links */
+    font-size: 16px; /* Font size for sidebar links */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#sidebar .nav-item .nav-link:hover {
+    background-color: #007BFF; /* Highlight color on hover */
+    color: #fff !important; /* White text color on hover */
+}
+
+/* Content Area */
+.container-fluid {
+    padding: 20px; /* Add padding to the content area */
+}
+
+/* Footer */
+footer {
+    background-color: #343A40; /* Dark background color for footer */
+    color: #fff; /* White text color for footer */
+    text-align: center;
+    padding: 10px;
+}
+
+/* Additional Custom Styles Here */
+
+/* Example: Add a custom class for a colorful button */
+.custom-button {
+    background-color: #FF5733; /* Custom button color */
+    color: #fff; /* White text color for button */
+    padding: 10px 20px; /* Add padding to the button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.custom-button:hover {
+    background-color: #FF4500; /* Button color on hover */
+}
