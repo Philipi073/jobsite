@@ -17,8 +17,6 @@ connection = mysql.connector.connect(
 
 cursor = connection.cursor()
 
-#rticles = Articles()
-
 @app.route("/")
 def index():
     return render_template("home.html") 
@@ -34,7 +32,7 @@ def jobs():
     jobs = cur.fetchall()
     return render_template("jobs.html", jobs=jobs)
 
-@app.route("/apply/<int:job-id>/")
+@app.route("/apply/<int:job_id>/", methods=["POST", "GET"])
 def apply(job_id):
     #create connection
     cur = connection.cursor()
@@ -45,10 +43,7 @@ def apply(job_id):
         return render_template("apply.html", job=job)
     else:
         return "Job notfound"
-    if request.method == "POST":
-        #handle application submission here
-        return "Application is successful"
-
+    
 class RegisterForm(Form):
     name = StringField("Name",[validators.Length(min=4, max=50)])
     username = StringField("Username", [validators.Length(min=4, max=25)])
@@ -213,7 +208,7 @@ def edit_job(id):
         cur = connection.cursor()
 
         #execute
-        cur.execute("UPDATE articles SET title=%s, description=%s, location=%s, salary=%s WHERE id=%s",(title, description, location, salary, id))
+        cur.execute("UPDATE jobs SET title=%s, description=%s, location=%s, salary=%s WHERE id=%s",(title, description, location, salary, id))
 
         #commit to db
         connection.commit()
