@@ -15,32 +15,47 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          {% if user_is_logged_in %}
-            <li class="nav-item">
-              <a class="nav-link" href="#">Logout</a>
-            </li>
-          {% else %}
-            <li class="nav-item">
-              <a class="nav-link" href="#">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
-            </li>
-          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="#">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
         </ul>
       </div>
     </nav>
     
     <div class="container-fluid">
       <div class="row">
-        <!-- ... Rest of your content ... -->
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+          <div class="position-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Language Translator</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Language Detector</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Image</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Project Pitch</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Project Demo</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          {% block content %}{% endblock %}
+        </main>
       </div>
     </div>
-    
-    <!-- Footer -->
-    <footer class="bg-light text-center py-3">
-      <p>&copy; {% now "Y" %} OKOMBI-AI. All Rights Reserved.</p>
-    </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
