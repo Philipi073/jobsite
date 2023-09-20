@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Custom CSS for styling -->
+    <link rel="stylesheet" href="{% static 'custom.css' %}">
     {% block styles %}{% endblock %}
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="#">Home</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -30,23 +32,23 @@
     
     <div class="container-fluid">
       <div class="row">
-        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
           <div class="position-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link" href="#">Language Translator</a>
+                <a class="nav-link text-light" href="#">Language Translator</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Language Detector</a>
+                <a class="nav-link text-light" href="#">Language Detector</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Image</a>
+                <a class="nav-link text-light" href="#">Image</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Project Pitch</a>
+                <a class="nav-link text-light" href="#">Project Pitch</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Project Demo</a>
+                <a class="nav-link text-light" href="#">Project Demo</a>
               </li>
             </ul>
           </div>
